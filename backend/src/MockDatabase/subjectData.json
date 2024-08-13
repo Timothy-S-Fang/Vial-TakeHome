@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 45,
+      "gender": "Male",
+      "diagnosisDate": "2023-01-15",
+      "status": "Active",
+      "diagnosis": "Type 2 Diabetes"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 50,
+      "gender": "Female",
+      "diagnosisDate": "2023-02-20",
+      "status": "Inactive",
+      "diagnosis": "Hypertension"
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "age": 60,
+      "gender": "Male",
+      "diagnosisDate": "2023-03-10",
+      "status": "Completed",
+      "diagnosis": "Chronic Kidney Disease"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "age": 35,
+      "gender": "Female",
+      "diagnosisDate": "2023-04-25",
+      "status": "Active",
+      "diagnosis": "Asthma"
+    },
+    {
+      "id": 5,
+      "name": "Sammy Zhao",
+      "age": 70,
+      "gender": "Male",
+      "diagnosisDate": "2023-05-30",
+      "status": "Active",
+      "diagnosis": "Heart Failure"
+    }
+  ]
+  

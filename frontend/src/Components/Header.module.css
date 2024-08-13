@@ -1,0 +1,25 @@
+.header {
+  height: rem(56px);
+  margin-bottom: rem(30px);
+  background-color: var(--mantine-color-body);
+  border-bottom: rem(1px) solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px; /* Adjust the width of the logo */
+  height: auto;
+  padding: 10px;
+}
+
+.logoContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centers the logo horizontally */
+  }

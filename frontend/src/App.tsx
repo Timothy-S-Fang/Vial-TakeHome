@@ -1,7 +1,16 @@
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
+import { AppShell, MantineProvider, Box } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { theme } from "./theme";
+import { Header } from "./Components/Header"
+import SubjectTable from "./Components/SubjectTable";
 
 export default function App() {
-  return <MantineProvider theme={theme}>App</MantineProvider>;
+  const [opened, { toggle }] = useDisclosure();
+  return (
+    <MantineProvider theme={theme}>
+      <Header />
+      <SubjectTable />
+    </MantineProvider>
+  );
 }
