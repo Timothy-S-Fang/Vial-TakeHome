@@ -15,3 +15,5 @@ This web app was completed for Vial interview 2024. It includes a Node backend a
 - React.js (created using Vite)
 - Mantine UI
 - Node.js Backend
+
+### How to run app
