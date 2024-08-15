@@ -1,48 +1,290 @@
 [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "age": 45,
-      "gender": "Male",
-      "diagnosisDate": "2023-01-15",
-      "status": "Active",
-      "diagnosis": "Type 2 Diabetes"
-    },
-    {
-      "id": 2,
-      "name": "Jane Smith",
-      "age": 50,
-      "gender": "Female",
-      "diagnosisDate": "2023-02-20",
-      "status": "Inactive",
-      "diagnosis": "Hypertension"
-    },
-    {
-      "id": 3,
-      "name": "Michael Johnson",
-      "age": 60,
-      "gender": "Male",
-      "diagnosisDate": "2023-03-10",
-      "status": "Completed",
-      "diagnosis": "Chronic Kidney Disease"
-    },
-    {
-      "id": 4,
-      "name": "Emily Davis",
-      "age": 35,
-      "gender": "Female",
-      "diagnosisDate": "2023-04-25",
-      "status": "Active",
-      "diagnosis": "Asthma"
-    },
-    {
-      "id": 5,
-      "name": "Sammy Zhao",
-      "age": 70,
-      "gender": "Male",
-      "diagnosisDate": "2023-05-30",
-      "status": "Active",
-      "diagnosis": "Heart Failure"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "John Doe",
+    "age": 45,
+    "gender": "Male",
+    "diagnosisDate": "2023-01-15",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "age": 50,
+    "gender": "Female",
+    "diagnosisDate": "2023-02-20",
+    "status": "Inactive"
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "age": 60,
+    "gender": "Male",
+    "diagnosisDate": "2023-03-10",
+    "status": "Completed"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "age": 35,
+    "gender": "Female",
+    "diagnosisDate": "2023-04-25",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Sammy Zhao",
+    "age": 70,
+    "gender": "Male",
+    "diagnosisDate": "2023-05-30",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "name": "Alice Brown",
+    "age": 55,
+    "gender": "Female",
+    "diagnosisDate": "2023-06-14",
+    "status": "Inactive"
+  },
+  {
+    "id": 7,
+    "name": "David Wilson",
+    "age": 65,
+    "gender": "Male",
+    "diagnosisDate": "2023-07-05",
+    "status": "Completed"
+  },
+  {
+    "id": 8,
+    "name": "Laura Martinez",
+    "age": 40,
+    "gender": "Female",
+    "diagnosisDate": "2023-08-18",
+    "status": "Active"
+  },
+  {
+    "id": 9,
+    "name": "Carlos Ramirez",
+    "age": 75,
+    "gender": "Male",
+    "diagnosisDate": "2023-09-22",
+    "status": "Active"
+  },
+  {
+    "id": 10,
+    "name": "Sophia Hernandez",
+    "age": 30,
+    "gender": "Female",
+    "diagnosisDate": "2023-10-01",
+    "status": "Inactive"
+  },
+  {
+    "id": 11,
+    "name": "Liam Clark",
+    "age": 50,
+    "gender": "Male",
+    "diagnosisDate": "2023-11-15",
+    "status": "Active"
+  },
+  {
+    "id": 12,
+    "name": "Olivia Walker",
+    "age": 45,
+    "gender": "Female",
+    "diagnosisDate": "2023-12-02",
+    "status": "Completed"
+  },
+  {
+    "id": 13,
+    "name": "Noah Robinson",
+    "age": 38,
+    "gender": "Male",
+    "diagnosisDate": "2023-11-20",
+    "status": "Active"
+  },
+  {
+    "id": 14,
+    "name": "Emma Lewis",
+    "age": 29,
+    "gender": "Female",
+    "diagnosisDate": "2023-09-30",
+    "status": "Inactive"
+  },
+  {
+    "id": 15,
+    "name": "William Hall",
+    "age": 66,
+    "gender": "Male",
+    "diagnosisDate": "2023-07-19",
+    "status": "Active"
+  },
+  {
+    "id": 16,
+    "name": "Isabella Allen",
+    "age": 59,
+    "gender": "Female",
+    "diagnosisDate": "2023-06-22",
+    "status": "Completed"
+  },
+  {
+    "id": 17,
+    "name": "James Young",
+    "age": 48,
+    "gender": "Male",
+    "diagnosisDate": "2023-05-14",
+    "status": "Active"
+  },
+  {
+    "id": 18,
+    "name": "Mia King",
+    "age": 37,
+    "gender": "Female",
+    "diagnosisDate": "2023-03-28",
+    "status": "Inactive"
+  },
+  {
+    "id": 19,
+    "name": "Benjamin Wright",
+    "age": 53,
+    "gender": "Male",
+    "diagnosisDate": "2023-04-11",
+    "status": "Active"
+  },
+  {
+    "id": 20,
+    "name": "Amelia Scott",
+    "age": 62,
+    "gender": "Female",
+    "diagnosisDate": "2023-01-05",
+    "status": "Completed"
+  },
+  {
+    "id": 21,
+    "name": "Mason Green",
+    "age": 44,
+    "gender": "Male",
+    "diagnosisDate": "2023-02-15",
+    "status": "Active"
+  },
+  {
+    "id": 22,
+    "name": "Harper Adams",
+    "age": 33,
+    "gender": "Female",
+    "diagnosisDate": "2023-03-07",
+    "status": "Inactive"
+  },
+  {
+    "id": 23,
+    "name": "Elijah Nelson",
+    "age": 57,
+    "gender": "Male",
+    "diagnosisDate": "2023-04-23",
+    "status": "Active"
+  },
+  {
+    "id": 24,
+    "name": "Evelyn Carter",
+    "age": 49,
+    "gender": "Female",
+    "diagnosisDate": "2023-05-29",
+    "status": "Completed"
+  },
+  {
+    "id": 25,
+    "name": "Logan Mitchell",
+    "age": 68,
+    "gender": "Male",
+    "diagnosisDate": "2023-06-17",
+    "status": "Active"
+  },
+  {
+    "id": 26,
+    "name": "Abigail Moore",
+    "age": 52,
+    "gender": "Female",
+    "diagnosisDate": "2023-07-25",
+    "status": "Inactive"
+  },
+  {
+    "id": 27,
+    "name": "Alexander Perez",
+    "age": 61,
+    "gender": "Male",
+    "diagnosisDate": "2023-08-05",
+    "status": "Active"
+  },
+  {
+    "id": 28,
+    "name": "Charlotte Turner",
+    "age": 55,
+    "gender": "Female",
+    "diagnosisDate": "2023-09-15",
+    "status": "Completed"
+  },
+  {
+    "id": 29,
+    "name": "Sebastian Hill",
+    "age": 39,
+    "gender": "Male",
+    "diagnosisDate": "2023-10-10",
+    "status": "Active"
+  },
+  {
+    "id": 30,
+    "name": "Scarlett Phillips",
+    "age": 28,
+    "gender": "Female",
+    "diagnosisDate": "2023-11-22",
+    "status": "Inactive"
+  },
+  {
+    "id": 31,
+    "name": "Lucas Harris",
+    "age": 47,
+    "gender": "Male",
+    "diagnosisDate": "2023-12-01",
+    "status": "Active"
+  },
+  {
+    "id": 32,
+    "name": "Grace Martinez",
+    "age": 36,
+    "gender": "Female",
+    "diagnosisDate": "2023-08-28",
+    "status": "Completed"
+  },
+  {
+    "id": 33,
+    "name": "Henry Campbell",
+    "age": 63,
+    "gender": "Male",
+    "diagnosisDate": "2023-07-14",
+    "status": "Active"
+  },
+  {
+    "id": 34,
+    "name": "Avery Cooper",
+    "age": 43,
+    "gender": "Female",
+    "diagnosisDate": "2023-05-20",
+    "status": "Inactive"
+  },
+  {
+    "id": 35,
+    "name": "Jack Rivera",
+    "age": 59,
+    "gender": "Male",
+    "diagnosisDate": "2023-04-09",
+    "status": "Active"
+  },
+  {
+    "id": 36,
+    "name": "Riley Lee",
+    "age": 32,
+    "gender": "Female",
+    "diagnosisDate": "2023-03-01",
+    "status": "Completed"
+  }
+]
