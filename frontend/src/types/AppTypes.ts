@@ -25,10 +25,3 @@ export interface FilterCriteria {
   gender: string | null;
   status: string | null;
 }
-
-export interface ContainerProps {
-  children: ReactNode;
-  maxWidth?: string;
-  padding?: string;
-  className?: string;
-}
