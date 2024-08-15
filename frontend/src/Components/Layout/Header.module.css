@@ -6,14 +6,8 @@
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
-.inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .logo {
-  width: 100px; /* Adjust the width of the logo */
+  width: 100px; 
   height: auto;
   padding: 10px;
 }
@@ -21,5 +15,5 @@
 .logoContainer {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centers the logo horizontally */
+    justify-content: left; /* Centers the logo horizontally */
   }

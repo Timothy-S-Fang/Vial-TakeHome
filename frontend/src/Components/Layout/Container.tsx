@@ -1,27 +1,10 @@
-import React, { ReactNode, FunctionComponent } from "react";
+import { FunctionComponent } from "react";
+import { ContainerProps } from "../../types/AppTypes";
 
-interface ContainerProps {
-    children: ReactNode;
-    maxWidth?: string;
-    padding?: string;
-    className?: string;
-  }
-
-const Container: FunctionComponent<ContainerProps> = ({
-  children,
-  maxWidth = "1200px",
-  padding = "20px",
-  className = "",
-}) => {
-  const containerStyle: React.CSSProperties = {
-    maxWidth: maxWidth,
-    margin: "0 auto", // Centers the container
-    padding: padding, // Adds padding around the content
-    boxSizing: "border-box",
-  };
-
+// General Component container
+const Container: FunctionComponent<ContainerProps> = ({ children }) => {
   return (
-    <div style={containerStyle} className={className}>
+    <div style={{maxWidth:"1200px", padding:"20px", margin:"0 auto", boxSizing:"border-box",}}>
       {children}
     </div>
   );

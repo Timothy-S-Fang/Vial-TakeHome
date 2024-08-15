@@ -1,9 +1,14 @@
-import { Table, TextInput, Pagination, Center } from "@mantine/core";
-import React, { FunctionComponent, useState, useEffect, useMemo } from "react";
+import { Table, TextInput, Pagination, Center, Select } from "@mantine/core";
+import { FunctionComponent, useState, useEffect } from "react";
 import { subjectCategories, itemsPerPage } from "../../Constants/data";
 import { FaSearch, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { fetchData } from "../../API/fetchData";
-import { Subject, SortConfig } from "../../types/AppTypes";
+import { Subject, SortConfig, FilterCriteria } from "../../types/AppTypes";
+import {
+  useSortedData,
+  useFilteredData,
+  usePaginatedData,
+} from "./tableModifiers";
 import TableContent from "./TableContent";
 
 const TableContainer: FunctionComponent = () => {
@@ -12,12 +17,18 @@ const TableContainer: FunctionComponent = () => {
   const [errorState, setErrorState] = useState<boolean>(false);
   const [activePage, setActivePage] = useState<number>(1);
   const [sortConfig, setSortConfig] = useState<SortConfig | null>(null);
+  const [filterCriteria, setFilterCriteria] = useState<FilterCriteria>({
+    gender: null,
+    status: null,
+  });
 
   useEffect(() => {
+    // To reset back to page one after searching
     setActivePage(1);
-  }, [searchTerm]);
+  }, [searchTerm, filterCriteria]);
 
   useEffect(() => {
+    // initial load of data from api
     const retrieveData = async () => {
       try {
         const retrievedData = await fetchData();
@@ -29,43 +40,22 @@ const TableContainer: FunctionComponent = () => {
     retrieveData();
   }, []);
 
-  const sortedData = useMemo(() => {
-    let sortableData = [...(data || [])];
-    if (sortConfig !== null && sortConfig.direction !== null) {
-      sortableData.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1;
-        }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1;
-        }
-        return 0;
-      });
-    }
-    return sortableData;
-  }, [data, sortConfig]);
+  // All data manipulation functions in ./tableModifiers for simplicity
+  const sortedData = useSortedData(data, sortConfig);
+  const filteredData = useFilteredData(sortedData, searchTerm, filterCriteria);
+  const paginatedData = usePaginatedData(
+    filteredData,
+    activePage,
+    itemsPerPage
+  );
 
-  const filteredData = useMemo(() => {
-    if (!sortedData) return [];
-    return sortedData.filter((subject) =>
-      Object.values(subject)
-        .join(" ")
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-    );
-  }, [sortedData, searchTerm]);
-
-  const paginatedData = useMemo(() => {
-    const startIndex = (activePage - 1) * itemsPerPage;
-    return filteredData.slice(startIndex, startIndex + itemsPerPage);
-  }, [filteredData, activePage]);
-
+  // handling for sorting from header click
   const handleSort = (key: keyof Subject) => {
     if (sortConfig?.key === key) {
       if (sortConfig.direction === "ascending") {
         setSortConfig({ key, direction: "descending" });
       } else if (sortConfig.direction === "descending") {
-        setSortConfig(null); // Turn off sorting
+        setSortConfig(null); 
       } else {
         setSortConfig({ key, direction: "ascending" });
       }
@@ -73,6 +63,26 @@ const TableContainer: FunctionComponent = () => {
       setSortConfig({ key, direction: "ascending" });
     }
   };
+
+  // handling for filters and searching
+  const handleFilterChange = (
+    key: keyof FilterCriteria,
+    value: string | null
+  ) => {
+    setFilterCriteria((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  // Display when backend throws error
+  if (errorState)
+    return (
+      <div>
+        Oh no! We are having trouble loading the data from the backend! Come
+        back another time while we get this fixed...
+      </div>
+    );
 
   return (
     <div>
@@ -83,6 +93,22 @@ const TableContainer: FunctionComponent = () => {
         mb="md"
         leftSection={<FaSearch size="1rem" color="black" />}
       />
+      <Center>
+        <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+          <Select
+            placeholder="Filter by Gender"
+            data={["Male", "Female"]}
+            value={filterCriteria.gender}
+            onChange={(value) => handleFilterChange("gender", value)}
+          />
+          <Select
+            placeholder="Filter by Status"
+            data={["Stable", "Critical", "Discharged"]}
+            value={filterCriteria.status}
+            onChange={(value) => handleFilterChange("status", value)}
+          />
+        </div>
+      </Center>
       <Table
         horizontalSpacing="md"
         verticalSpacing="xs"
@@ -96,9 +122,9 @@ const TableContainer: FunctionComponent = () => {
                 {`${subject.label} `}
                 {sortConfig?.key === subject.key &&
                   (sortConfig.direction === "ascending" ? (
-                    <FaChevronUp size={10}/>
+                    <FaChevronUp size={10} />
                   ) : (
-                    <FaChevronDown size={10}/>
+                    <FaChevronDown size={10} />
                   ))}
               </th>
             ))}

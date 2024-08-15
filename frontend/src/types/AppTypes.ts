@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface SortConfig {
   key: keyof Subject; 
@@ -21,11 +21,14 @@ export interface ContainerProps {
   className?: string;
 }
 
-export interface FilterGroupProps {
-  genderFilter: string | null;
-  setGenderFilter: React.Dispatch<React.SetStateAction<string | null>>;
-  statusFilter: string | null;
-  setStatusFilter: React.Dispatch<React.SetStateAction<string | null>>;
-  diagnosisDateFilter: string | null;
-  setDiagnosisDateFilter: React.Dispatch<React.SetStateAction<string | null>>;
+export interface FilterCriteria {
+  gender: string | null;
+  status: string | null;
+}
+
+export interface ContainerProps {
+  children: ReactNode;
+  maxWidth?: string;
+  padding?: string;
+  className?: string;
 }
