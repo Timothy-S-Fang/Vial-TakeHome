@@ -6,6 +6,7 @@ const TableContent: FunctionComponent<{ data: Subject }> = ({ data }) => {
   const { name, age, gender, diagnosisDate, status, id } = data;
   return (
     <Table.Tr key={id}>
+        <Table.Td>{id}</Table.Td>
       <Table.Td>{name}</Table.Td>
       <Table.Td>{age}</Table.Td>
       <Table.Td>{gender}</Table.Td>
