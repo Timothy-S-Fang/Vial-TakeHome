@@ -17,3 +17,11 @@ This web app was completed for Vial interview 2024. It includes a Node backend a
 - Node.js Backend
 
 ### How to run app
+
+To run the app, from the root directory of this project folder, run the command
+```
+npm run setup
+```
+
+### Demo Video
+[My Demo Video](https://youtu.be/iU9XdWW5kVE)
