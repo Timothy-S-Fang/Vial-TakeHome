@@ -55,7 +55,7 @@ const TableContainer: FunctionComponent = () => {
       if (sortConfig.direction === "ascending") {
         setSortConfig({ key, direction: "descending" });
       } else if (sortConfig.direction === "descending") {
-        setSortConfig(null); 
+        setSortConfig(null);
       } else {
         setSortConfig({ key, direction: "ascending" });
       }
@@ -75,24 +75,8 @@ const TableContainer: FunctionComponent = () => {
     }));
   };
 
-  // Display when backend throws error
-  if (errorState)
+  const FilterComponent = () => {
     return (
-      <div>
-        Oh no! We are having trouble loading the data from the backend! Come
-        back another time while we get this fixed...
-      </div>
-    );
-
-  return (
-    <div>
-      <TextInput
-        placeholder="Type to Search"
-        value={searchTerm}
-        onChange={(event) => setSearchTerm(event.currentTarget.value)}
-        mb="md"
-        leftSection={<FaSearch size="1rem" color="black" />}
-      />
       <Center>
         <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
           <Select
@@ -109,6 +93,11 @@ const TableContainer: FunctionComponent = () => {
           />
         </div>
       </Center>
+    );
+  };
+
+  const SubjectTable = () => {
+    return (
       <Table
         horizontalSpacing="md"
         verticalSpacing="xs"
@@ -142,6 +131,28 @@ const TableContainer: FunctionComponent = () => {
           )}
         </Table.Tbody>
       </Table>
+    );
+  };
+  // Display when backend throws error
+  if (errorState)
+    return (
+      <div>
+        Oh no! We are having trouble loading the data from the backend! Come
+        back another time while we get this fixed...
+      </div>
+    );
+
+  return (
+    <div>
+      <TextInput
+        placeholder="Type to Search"
+        value={searchTerm}
+        onChange={(event) => setSearchTerm(event.currentTarget.value)}
+        mb="md"
+        leftSection={<FaSearch size="1rem" color="black" />}
+      />
+      <FilterComponent />
+      <SubjectTable />
       {filteredData.length > itemsPerPage && (
         <Center>
           <Pagination
