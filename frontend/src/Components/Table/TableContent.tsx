@@ -6,12 +6,12 @@ const TableContent: FunctionComponent<{ data: Subject }> = ({ data }) => {
   const { name, age, gender, diagnosisDate, status, id } = data;
   return (
     <Table.Tr key={id}>
-        <Table.Td>{id}</Table.Td>
-      <Table.Td>{name}</Table.Td>
-      <Table.Td>{age}</Table.Td>
-      <Table.Td>{gender}</Table.Td>
-      <Table.Td>{diagnosisDate}</Table.Td>
-      <Table.Td>{status}</Table.Td>
+      <Table.Td style={{ textAlign: 'center' }}>{id}</Table.Td>
+      <Table.Td style={{ textAlign: 'center' }}>{name}</Table.Td>
+      <Table.Td style={{ textAlign: 'center' }}>{age}</Table.Td>
+      <Table.Td style={{ textAlign: 'center' }}>{gender}</Table.Td>
+      <Table.Td style={{ textAlign: 'center' }}>{diagnosisDate}</Table.Td>
+      <Table.Td style={{ textAlign: 'center' }}> {status}</Table.Td>
     </Table.Tr>
   );
 };
