@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
 
 export interface SortConfig {
-  key: keyof Subject; // keyof Subject gives you a union of all keys in Subject
-  direction: "ascending" | "descending";
+  key: keyof Subject; 
+  direction: "ascending" | "descending" | null;
 }
 
 export interface Subject {
